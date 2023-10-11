@@ -2,6 +2,7 @@
 import React from 'react';
 import Project from '../components/project'; // Import the Project component
 import projectData from '../data/projectsData'; // Import your project data
+import { Link } from 'react-router-dom';
 
 function Projects() {
   return (
@@ -9,8 +10,10 @@ function Projects() {
       <h2>Projects</h2>
       <div className="project-list">
         {projectData.map((project) => (
-          <Project key={project.id} project={project} /> // Render the Project component for each project
-        ))}
+            <Link to={`/projects/${project.id}`} key={project.id}>
+          <Project key={project.id} project={project} />
+          </Link>
+          ))}
       </div>
     </div>
   );
