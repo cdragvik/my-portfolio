@@ -3,17 +3,29 @@
 import React from 'react';
 import Header from './header';
 import Footer from './footer';
+import styled from 'styled-components';
+
+
+const LayoutContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+`;
+
+const ContentWrapper = styled.div`
+  flex: 1;
+`;
 
 
 function Layout({ children }) {
   return (
-    <div className="app">
+    <LayoutContainer>
       <Header />
-      <main>
+      <ContentWrapper>
         {children}
-      </main>
+      </ContentWrapper>
       <Footer />
-    </div>
+    </LayoutContainer>
   );
 }
 

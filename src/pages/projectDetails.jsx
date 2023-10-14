@@ -1,12 +1,56 @@
 import React from 'react';
-import { useParams } from 'react-router-dom'; // Import useParams to access route parameters
+import styled from 'styled-components';
 import projectData from '../data/projectsData';
+import { useParams } from 'react-router-dom';
+
+
+const Section = styled.section`
+  display: flex;
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+`;
+
+const Content = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+`;
+
+const Title = styled.h1`
+  text-transform: uppercase;
+  text-align: center;
+  padding: 20px;
+  margin-bottom: 20px;
+`;
+
+const ProjectImage = styled.img`
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 12px;
+`;
+
+const ProjectDescription = styled.p`
+  font-size: 18px;
+  margin-bottom: 12px;
+`;
+
+const Button = styled.a`
+  background-color: #f7d9c6;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 18px;
+  text-transform: uppercase;
+  border-radius: 8px;
+  margin: 10px 0;
+`;
 
 function ProjectDetail() {
-  // Access the projectId from the URL parameter
   const { projectId } = useParams();
-
-  // Fetch the project details based on the projectId
   const project = projectData.find((p) => p.id === parseInt(projectId));
 
   if (!project) {
@@ -14,18 +58,23 @@ function ProjectDetail() {
   }
 
   return (
-    <div className="project-detail">
-      <h2>{project.title}</h2>
-      <img src={project.image} alt={project.title} />
-      <p>{project.description}</p>
-      <p>Technologies Used: {project.technologies.join(', ')}</p>
-      <a href={project.githubLink} target="_blank" rel="noopener noreferrer">
-        GitHub
-      </a>
-      <a href={project.liveDemoLink} target="_blank" rel="noopener noreferrer">
-        Live Demo
-      </a>
-    </div>
+      <Section>
+        <Content>
+          <Title>{project.title}</Title>
+          <ProjectImage src={project.image} alt={project.title} />
+          <ProjectDescription>{project.description}</ProjectDescription>
+          <p className="project-technologies">
+          Technologies Used: {project.technologies.join(', ')}
+            </p>
+          <Button href={project.githubLink} target="_blank" rel="noopener noreferrer">
+            GitHub
+          </Button>
+          <Button href={project.liveDemoLink} target="_blank" rel="noopener noreferrer">
+            Live Demo
+          </Button>
+        </Content>
+      </Section>
+
   );
 }
 
