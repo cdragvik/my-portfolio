@@ -55,7 +55,7 @@ const Home = () => {
           <HelloText>Frontend Development student at Noroff.</HelloText>
           <HelloText>Welcome to my portfolio.</HelloText>
           <Link to="/projects"><Button>My projects</Button></Link>
-          <a href="contact.html"><Button>Get in touch</Button></a>
+          <Link to="/contact"><Button>Get in touch</Button></Link>
         </Content>
         <Image src="src/assets/workspace.jpg" alt="workspace" className="homeimg" />
       </Section>
