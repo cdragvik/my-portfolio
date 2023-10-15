@@ -2,10 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-
 const Section = styled.section`
   display: flex;
-  max-width: 1000px;
+  max-width: 800px;
   margin: auto;
   padding: 20px;
 `;
@@ -18,16 +17,8 @@ const Content = styled.div`
   padding: 20px;
 `;
 
-const Title = styled.h1`
-  text-transform: uppercase;
-  text-align: center;
-  padding: 20px;
-  margin-bottom: 20px;
-`;
-
-const HelloText = styled.p`
-  max-width: 400px;
-  margin-bottom: 20px;
+const ButtonContainer = styled.div`
+  display: flex;  
 `;
 
 export const Button = styled.button`
@@ -35,9 +26,9 @@ export const Button = styled.button`
   border: none;
   padding: 10px 20px;
   cursor: pointer;
-  font-size: 18px;
   border-radius: 8px;
   margin: 10px 0;
+  margin-right: 10px;
 `;
 
 const Image = styled.img`
@@ -49,18 +40,18 @@ const Image = styled.img`
 
 const Home = () => {
   return (
-      <Section>
-        <Content>
-          <Title>Hello, I'm Christiane!</Title>
-          <HelloText>Frontend Development student at Noroff.</HelloText>
-          <HelloText>Welcome to my portfolio. :::::</HelloText>
+    <Section>
+      <Content>
+        <h1>Hello, I'm Christiane!</h1>
+        <p>Frontend Development student at Noroff.</p>
+        <p>Welcome to my portfolio.</p>
+        <ButtonContainer>
           <Link to="/projects"><Button>My projects</Button></Link>
           <Link to="/contact"><Button>Get in touch</Button></Link>
-        </Content>
-        <Image src='/workspace.jpg' alt="workspace" className="homeimg" />
-
-      </Section>
-    
+        </ButtonContainer>
+      </Content>
+      <Image src='/workspace.jpg' alt="workspace" className="homeimg" />
+    </Section>
   );
 }
 

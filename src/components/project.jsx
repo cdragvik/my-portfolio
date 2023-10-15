@@ -27,38 +27,15 @@ const ProjectImage = styled.div`
   }
 `;
 
-const ProjectDetails = styled.div`
-  h3 {
-    font-size: 1.5rem;
-    margin: 0;
-  }
-
-  .project-description {
-    font-size: 1rem;
-    color: #333;
-    margin: 8px 0;
-  }
-
-  .project-technologies {
-    font-size: 0.9rem;
-    color: #777;
-    margin: 4px 0;
-  }
-`;
 
 function Project({ project }) {
   return (
     <ProjectCardWrapper>
       <ProjectImage>
-        <img src={process.env.PUBLIC_URL + project.image} alt={project.title} />
+        <img src={project.image} alt={project.title} />
       </ProjectImage>
-      <ProjectDetails>
         <h3>{project.title}</h3>
-        <p className="project-description">{project.description}</p>
-        <p className="project-technologies">
-          Technologies Used: {project.technologies.join(', ')}
-        </p>
-      </ProjectDetails>
+        <p>{project.type}</p>
     </ProjectCardWrapper>
   );
 }

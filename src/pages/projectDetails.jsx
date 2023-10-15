@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import projectData from '../data/projectsData';
 import { useParams } from 'react-router-dom';
 
-
 const Section = styled.section`
   display: flex;
   max-width: 1000px;
@@ -38,6 +37,11 @@ const ProjectDescription = styled.p`
   margin-bottom: 12px;
 `;
 
+const ButtonContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
 const Button = styled.a`
   background-color: #f7d9c6;
   border: none;
@@ -47,6 +51,7 @@ const Button = styled.a`
   text-transform: uppercase;
   border-radius: 8px;
   margin: 10px 0;
+  text-align: center; /* Center-align the button text */
 `;
 
 function ProjectDetail() {
@@ -58,23 +63,22 @@ function ProjectDetail() {
   }
 
   return (
-      <Section>
-        <Content>
-          <Title>{project.title}</Title>
-          <ProjectImage src={project.image} alt={project.title} />
-          <ProjectDescription>{project.description}</ProjectDescription>
-          <p className="project-technologies">
-          Technologies Used: {project.technologies.join(', ')}
-            </p>
+    <Section>
+      <Content>
+        <Title>{project.title}</Title>
+        <ProjectImage src={project.image} alt={project.title} />
+        <ProjectDescription>{project.description}</ProjectDescription>
+        <p>Technologies Used: {project.technologies.join(', ')}</p>
+        <ButtonContainer>
           <Button href={project.githubLink} target="_blank" rel="noopener noreferrer">
             GitHub
           </Button>
           <Button href={project.liveDemoLink} target="_blank" rel="noopener noreferrer">
             Live Demo
           </Button>
-        </Content>
-      </Section>
-
+        </ButtonContainer>
+      </Content>
+    </Section>
   );
 }
 
