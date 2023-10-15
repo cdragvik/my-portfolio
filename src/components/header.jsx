@@ -54,7 +54,7 @@ function Header() {
     <HeaderWrapper>
       <HeaderContainer>
         <Logo to="/" className="logo">
-          <img src="src/assets/Christiane Dragvik-logos_white.png" alt="Logo" />
+          <img src="https://github.com/cdragvik/my-portfolio/blob/5249ecc8a1fd2057d18e75dc24ff7f17f7007638/src/assets/Christiane%20Dragvik-logos_white.png" alt="Logo" />
         </Logo>
         <nav className="nav">
           <NavList>
