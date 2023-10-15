@@ -57,7 +57,8 @@ const Home = () => {
           <Link to="/projects"><Button>My projects</Button></Link>
           <Link to="/contact"><Button>Get in touch</Button></Link>
         </Content>
-        <Image src="src/assets/workspace.jpg" alt="workspace" className="homeimg" />
+        <Image src='public/workspace.jpg' alt="workspace" className="homeimg" />
+
       </Section>
     
   );
