@@ -50,7 +50,7 @@ function Project({ project }) {
   return (
     <ProjectCardWrapper>
       <ProjectImage>
-        <img src={project.image} alt={project.title} />
+        <img src={process.env.PUBLIC_URL + project.image} alt={project.title} />
       </ProjectImage>
       <ProjectDetails>
         <h3>{project.title}</h3>
