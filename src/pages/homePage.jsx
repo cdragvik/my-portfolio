@@ -53,11 +53,11 @@ const Home = () => {
         <Content>
           <Title>Hello, I'm Christiane!</Title>
           <HelloText>Frontend Development student at Noroff.</HelloText>
-          <HelloText>Welcome to my portfolio.</HelloText>
+          <HelloText>Welcome to my portfolio. :::::</HelloText>
           <Link to="/projects"><Button>My projects</Button></Link>
           <Link to="/contact"><Button>Get in touch</Button></Link>
         </Content>
-        <Image src='public/workspace.jpg' alt="workspace" className="homeimg" />
+        <Image src='/workspace.jpg' alt="workspace" className="homeimg" />
 
       </Section>
     
